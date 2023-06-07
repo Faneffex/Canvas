@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .category {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #6c757d;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category .arrow {
+            transition: all 0.3s ease;
+        }
+
+        .category.open {
+            flex-direction: column;
+        }
+
+        .category.open .arrow {
+            transform: rotate(90deg);
+        }
+
+        .category .dropdown {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .category.open .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>2023 - 2024 SIP Materials Page</h1>
+    <hr>
+    <div class="category">
+        <span>Category 1</span>
+        <span class="arrow">➤</span>
+        <ul class="dropdown">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <!-- Add more categories as needed -->
+    <script>
+        document.querySelectorAll('.category').forEach(function(element) {
+            element.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
